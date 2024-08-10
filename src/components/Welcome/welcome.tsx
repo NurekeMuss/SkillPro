@@ -45,7 +45,7 @@ export const Welcome=()=> {
                     </div>
                 </div>
 
-                <img src={welcome} alt="" data-aos="fade-left" data-aos-duration="1000"/>
+                <img src={welcome} alt="" data-aos="fade-left" data-aos-duration="1000" className='welcome-img'/>
             </div>
         
         </div>
