@@ -1,153 +1,197 @@
-.main-container{
+.main-container {
     background-color: var(--secondary-color);
-}
-
-.container-welcome{
+  }
+  
+  .container-welcome {
     max-width: 1246px;
     padding: 50px 15px 200px;
     margin: 0 auto;
     display: flex;
     align-items: center;
-    .welcome-page{
-        width: 679px;
-        height: 364px;
+    flex-direction: column; // Stack elements on smaller screens
+  
+    .welcome-page {
+      width: 100%;
+      max-width: 679px;
+      height: auto; // Ensure the height adjusts with content on smaller screens
     }
-.welcome-page__title{
-        width: 652px;
-        height: 208px;
-        h3{
-            font-family: var(--main-font);   
-            font-size: 56px;
-            line-height: 64px;
-            font-weight: normal;
-        }
-        p{
-            font-family: var(--main-font);
-            font-size: 18px;
-            line-height: 28px;
-            color: #5E6670;
-        }
+  
+    .welcome-page__title {
+      width: 100%;
+      max-width: 652px;
+      height: auto;
+      text-align: center; // Center the text for smaller screens
+  
+      h3 {
+        font-family: var(--main-font);
+        font-size: 36px; // Reduce the font size for better readability on smaller screens
+        line-height: 44px;
+        font-weight: normal;
+      }
+  
+      p {
+        font-family: var(--main-font);
+        font-size: 16px; // Slightly reduce font size for smaller screens
+        line-height: 24px;
+        color: #5e6670;
+        text-align: center; // Center text
+      }
     }
-    .welcome-page__search{
-            background: white;
-            height: 80px;
-            border: 2px solid #E4E5E8;
-            border-radius: 5px;
-            display: flex;
-            gap: 60px;
-            align-items: center;
-
-        input{
-            border: none;
-            height: 35px;
-            border-radius: 4px; 
-            transition: width 0.4s ease, box-shadow 0.3s ease, background-color 0.3s ease;
-        }
-            
-        input:focus {
-            box-shadow: 0 0 8px rgba(0, 123, 255, 0.5); 
-            background-color: #f0f8ff;
-            outline: none; 
-        }
-        
-        input:hover {
-            box-shadow: 0 0 5px rgba(0, 123, 255, 0.3); /* Slight blue glow on hover */
-        }
-        .search-container{
-            display: flex;
-            align-items: center;
-            gap: 20px;
-            height: 56px;
-            .search{
-                margin-left:5px;
-                display: flex;
-                align-items: center;
-            }
-            .location{
-                display: flex;
-                align-items: center;    
-            }
-            .stick{ 
-                border-left: 2px solid #F1F2F4;
-                height: 32px;
-            }
-        }
-    }
-    .text{
-        padding-top:10px;
-        p{
-            font-family: var(--main-font);
-            font-size: 14px;
-            font-weight: 400;
-            line-height: 20px;
-        }
-        span:nth-child(1){
-            color: grey;
-        }
-        span:nth-child(2){
-            color: blue;
-        }
-    }
-    .statistic {
-        width: 800px;
-        padding-top: 100px;
+  
+    .welcome-page__search {
+      background: white;
+      height: auto; // Adjust the height based on content
+      border: 2px solid #e4e5e8;
+      border-radius: 5px;
+      display: flex;
+      flex-direction: column; // Stack elements vertically on smaller screens
+      gap: 20px;
+      padding: 20px;
+  
+      input {
+        border: none;
+        height: 35px;
+        width: 100%; // Ensure inputs take full width on smaller screens
+        border-radius: 4px;
+        transition: width 0.4s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+      }
+  
+      input:focus {
+        box-shadow: 0 0 8px rgba(0, 123, 255, 0.5);
+        background-color: #f0f8ff;
+        outline: none;
+      }
+  
+      input:hover {
+        box-shadow: 0 0 5px rgba(0, 123, 255, 0.3); /* Slight blue glow on hover */
+      }
+  
+      .search-container {
         display: flex;
-        gap: 15px;
-    
-        .all-card {
+        flex-direction: column; // Stack search and location inputs vertically on smaller screens
+        align-items: stretch;
+        gap: 20px;
+        height: auto;
+  
+        .search {
+          display: flex;
+          align-items: center;
+        }
+  
+        .location {
+          display: flex;
+          align-items: center;
+        }
+  
+        .stick {
+          display: none; // Hide the stick separator on smaller screens
+        }
+      }
+    }
+  
+    .text {
+      padding-top: 10px;
+  
+      p {
+        font-family: var(--main-font);
+        font-size: 14px;
+        font-weight: 400;
+        line-height: 20px;
+        text-align: center; // Center text on smaller screens
+      }
+  
+      span:nth-child(1) {
+        color: grey;
+      }
+  
+      span:nth-child(2) {
+        color: blue;
+      }
+    }
+  
+    .statistic {
+      width: 100%;
+      max-width: 800px;
+      padding-top: 100px;
+      display: flex;
+      flex-direction: column; // Stack the cards vertically on smaller screens
+      gap: 15px;
+  
+      .all-card {
+        display: flex;
+        flex-direction: column; // Stack the cards vertically on smaller screens
+  
+        .card {
+          width: 100%;
+          max-width: 312px;
+          height: 112px;
+          display: flex;
+          align-items: center;
+          padding-left: 10px;
+          gap: 8px;
+          opacity: 0;
+          transform: translateY(30px);
+          transition: opacity 0.6s ease, transform 0.6s ease, box-shadow 0.3s ease;
+          animation: cardFadeIn 0.6s forwards;
+  
+          &.light {
+            background-color: #ffffff;
+          }
+  
+          &.dark {
+            background-color: #d9e2ec;
+          }
+  
+          &:hover {
+            transform: scale(1.05);
+            box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+          }
+  
+          .card-text {
             display: flex;
-            justify-content: space-between;
-    
-            .card {
-                width: 312px;
-                height: 112px;
-                display: flex;
-                align-items: center;
-                padding-left: 10px;
-                gap: 8px;
-                opacity: 0;
-                transform: translateY(30px);
-                transition: opacity 0.6s ease, transform 0.6s ease, box-shadow 0.3s ease;
-                animation: cardFadeIn 0.6s forwards;
-    
-                &.light {
-                    background-color: #FFFFFF;
-                }
-                &.dark {
-                    background-color: #d9e2ec;
-                }
-    
-                &:hover {
-                    transform: scale(1.05);
-                    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2);
-                    transition: transform 0.3s ease, box-shadow 0.3s ease;
-                }
-    
-                .card-text {
-                    display: flex;
-                    gap: 8px;
-                    flex-direction: column;
-    
-                    h3 {
-                        font-family: var(--main-font);
-                        font-size: 24px;
-                    }
-    
-                    p {
-                        font-family: var(--main-font);
-                        font-size: 16px;
-                        color: #767F8C;
-                    }
-                }
+            gap: 8px;
+            flex-direction: column;
+  
+            h3 {
+              font-family: var(--main-font);
+              font-size: 24px;
             }
+  
+            p {
+              font-family: var(--main-font);
+              font-size: 16px;
+              color: #767f8c;
+            }
+          }
         }
+      }
     }
-    
+  
     @keyframes cardFadeIn {
-        to {
-            opacity: 1;
-            transform: translateY(0);
-        }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
     }
-    
-}
+  
+    @media (max-width: 768px) {
+      .welcome-page__title h3 {
+        font-size: 32px;
+        line-height: 40px;
+      }
+  
+      .welcome-page__title p {
+        font-size: 14px;
+      }
+  
+      .welcome-page__search {
+        gap: 10px;
+      }
+  
+      .statistic {
+        gap: 10px;
+      }
+    }
+  }
+  
