@@ -1,0 +1,28 @@
+{
+  "jobs": [
+    {
+      "id": "1",
+      "title": "Frontend Developer",
+      "location": "Remote",
+      "type": "remote",
+      "salary": "3000-4000 USD",
+      "description": "Looking for an experienced Frontend Developer."
+    },
+    {
+      "id": "2",
+      "title": "Backend Developer",
+      "location": "New York",
+      "type": "offline",
+      "salary": "4000-5000 USD",
+      "description": "Seeking a skilled Backend Developer."
+    },
+    {
+      "id": "5e25",
+      "jobTitle": "Front",
+      "location": "KZ",
+      "jobType": "remote",
+      "salary": "500000",
+      "description": "Front html css js "
+    }
+  ]
+}

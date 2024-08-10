@@ -1,0 +1,114 @@
+.container-header {
+    background-color: #F1F2F4;
+    padding: 15px 0;
+
+    .header {
+        max-width: 1246px;
+        padding: 0 15px;
+        margin: 0 auto;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    ul {
+        display: flex;
+        align-items: center;
+        gap: 20px;
+        list-style: none;
+    }
+
+    a {
+        font-family: 'Inter', sans-serif;
+        font-size: 14px;
+        font-weight: normal;
+        text-decoration: none;
+        color: #5E6670;
+        position: relative;
+        padding-bottom: 5px;
+
+        &:hover {
+            color: blue;
+        }
+
+        &::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            left: 0;
+            bottom: 0;
+            background-color: blue;
+            transition: width 0.3s ease;
+        }
+
+        &:hover::after {
+            width: 100%;
+        }
+    }
+
+    .phone {
+        display: flex;
+        justify-content: center;
+        flex-direction: row;
+        gap: 10px;
+        align-items: center;
+        p{
+            font-family: var(--main-font);
+            font-size: 14px;
+            font-weight: 600;
+            line-height: 20px;
+        }
+    }
+
+    .dropdown {
+        position: relative;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+
+        .flag-icon {
+            margin-right: 8px;
+        }
+
+        .dropdown-arrow {
+            margin-left: 5px;
+        }
+
+        .dropdown-menu {
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background-color: #fff;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            padding: 10px;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            z-index: 1000;
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(-10px);
+            transition: all 0.3s ease;
+        }
+
+        &:hover .dropdown-menu {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+
+        li {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            padding: 5px 10px;
+            cursor: pointer;
+
+            &:hover {
+                background-color: #f0f0f0;
+            }
+        }
+    }
+}

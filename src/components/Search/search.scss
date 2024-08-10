@@ -1,0 +1,117 @@
+.container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    .search-panel{
+    display: flex;
+    align-items: center;
+    gap: 35px;
+    }
+    .search-panel_title{
+        display: flex;
+        gap: 5px;
+        justify-content: center;
+        align-items: center;
+        h1{
+            font-family: 'Inter',sans-serif;
+            font-size: 24px;
+            font-weight:600;
+        }
+    }
+    .search-panel_form{
+        width: 668px;
+        height: 50px;
+        border: 1px solid var(--secondary-color);
+        display: flex;
+        align-items: center;
+        gap: 20px;
+    li{
+        list-style: none;
+    }
+    input {
+        height: 40px;
+        width: 500px;
+        border: none;
+        padding: 0 10px;
+        border-radius: 4px; 
+       /*  box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.2);  */
+        transition: width 0.4s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+    }
+    
+    input:focus {
+        width: 550px; 
+        box-shadow: 0 0 8px rgba(0, 123, 255, 0.5); 
+        background-color: #f0f8ff;
+        outline: none; 
+    }
+    
+    input:hover {
+        box-shadow: 0 0 5px rgba(0, 123, 255, 0.3); /* Slight blue glow on hover */
+    }
+    
+    }
+    ul{
+        margin: 20px;
+    }
+    .dropdown {
+        position: relative;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+
+        .flag-icon {
+            margin-right: 8px;
+        }
+
+        .dropdown-arrow {
+            margin-left: 5px;
+        }
+
+        .dropdown-menu {
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background-color: #fff;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            padding: 10px;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            z-index: 1000;
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(-10px);
+            transition: all 0.3s ease;
+        }
+
+        &:hover .dropdown-menu {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+
+        li {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            padding: 5px 10px;
+            cursor: pointer;
+
+            &:hover {
+                background-color: #f0f0f0;
+            }
+        }
+    }
+    .stick{ 
+        border-left: 2px solid #F1F2F4;
+        height: 32px;
+    }
+    .buttons{
+        display: flex;
+        gap: 10px;
+        button{
+            cursor: pointer;
+        }
+    }
+}
