@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import './search.scss';
 import search from '../../images/search.png';
 import '../../App.css';

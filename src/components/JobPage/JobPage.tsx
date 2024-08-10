@@ -1,5 +1,4 @@
-import React, { useEffect, useState } from 'react';
-import { Header } from '../Header/header';
+import { useEffect, useState } from 'react';
 import { SearchForm } from '../Search/SearchForm';
 import './jobPage.scss';
 
